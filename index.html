@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dayal Store (दयाल स्टोर) • Estd. 1952 | उत्पाद कैटलॉग</title>
+  <meta name="description" content="दयाल स्टोर (स्थापना 1952), प्रतापगढ़। दुकान पर उपलब्ध सामग्रियों का कैटलॉग। होम डिलीवरी हेतु कॉल करें: +91 7398283814">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/dayal-store-seal-128.png">
+
+  <!-- Google Fonts: Rozha One, Noto Serif Devanagari, Cinzel, Marcellus, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Marcellus&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header (Call & WhatsApp at Top) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#searchSection" class="brand-wrapper" id="brand-link" title="दयाल स्टोर - होम पेज">
+        <img 
+          src="assets/images/dayal-store-seal-128.png" 
+          alt="Dayal Store Seal Estd 1952" 
+          class="brand-seal-icon" 
+          width="44" 
+          height="44"
+        />
+        <div class="brand-text">
+          <span class="brand-title">DAYAL STORE</span>
+          <span class="brand-sub">दयाल स्टोर • Estd. 1952</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="tel:+917398283814" class="minimal-nav-btn" id="header-call-btn" title="दुकान पर कॉल करें">
+          <span class="nav-btn-icon">📞</span>
+          <span class="nav-btn-text">कॉल: +91 73982 83814</span>
+        </a>
+        <a href="https://wa.me/917398283814?text=नमस्ते%20दयाल%20स्टोर%2C%20मुझे%20सामान%20उपलब्धता%20हेतु%20पूछताछ%20करनी%20है।" target="_blank" rel="noopener noreferrer" class="minimal-nav-wa-btn" id="header-wa-btn" title="व्हाट्सएप करें">
+          <span class="nav-btn-icon">💬</span>
+          <span class="nav-btn-text">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Heritage Brand Showcase Hero -->
+  <section class="heritage-hero-section">
+    <div class="heritage-hero-inner">
+      <div class="hero-seal-emblem-wrap">
+        <img 
+          src="assets/images/dayal-store-seal-512.png" 
+          alt="दयाल स्टोर - स्वर्गीय गंगा प्रसाद जी की प्रसिद्ध दुकान - Since 1952" 
+          class="hero-seal-emblem" 
+          width="170" 
+          height="170"
+        />
+      </div>
+      <div class="heritage-hero-text">
+        <div class="heritage-ornament-line">
+          <span class="ornament-glyph">❧</span>
+          <span class="heritage-motto">स्वर्गीय गंगा प्रसाद जी की प्रसिद्ध दुकान</span>
+          <span class="ornament-glyph">☙</span>
+        </div>
+        <h1 class="heritage-title">दयाल स्टोर</h1>
+        <div class="heritage-ribbon-sub">
+          <span class="ribbon-decor">❖</span>
+          <span class="ribbon-text">SINCE 1952 • बाबागंज, प्रतापगढ़</span>
+          <span class="ribbon-decor">❖</span>
+        </div>
+        <p class="heritage-desc">शुद्धता, ताज़गी और प्रामाणिक गुणवत्ता की 70+ वर्षों की अटूट परंपरा</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clean Live Search Bar Section -->
+  <section class="search-section" id="searchSection">
+    <div class="search-section-inner">
+      <div class="search-box-card">
+        <span class="search-icon-left">🔍</span>
+        <input 
+          type="text" 
+          id="catalogSearchInput" 
+          class="search-input" 
+          placeholder="उत्पाद खोजें (जैसे: पनीर, खोया, बासमती चावल, मसाले, डिस्पोजल...)"
+          aria-label="उत्पाद खोजें"
+          autocomplete="off"
+        />
+        <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="सर्च हटाएं">✕</button>
+        <button type="button" id="searchActionBtn" class="search-action-btn">खोजें</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog Section -->
+  <main class="catalog-section" id="catalogSection">
+    <div class="catalog-container">
+
+      <!-- Category Filter Sticky Bar -->
+      <div class="category-filter-container">
+        <div class="filter-header-row">
+          <div class="filter-heading">
+            <span>श्रेणियां (Categories)</span>
+          </div>
+          <div class="filter-counts">
+            <span id="totalProductsCount">230+</span> उत्पाद उपलब्ध
+          </div>
+        </div>
+
+        <!-- Category Pills Scroll -->
+        <div class="category-pills-scroll" id="categoryPillsContainer">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+
+        <!-- Subcategory Bar (Clean minimal chips, NO IMAGES) -->
+        <div class="subcategory-bar" id="subcategoryBar" style="display: none;">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Active Filter Summary Bar -->
+      <div class="active-filter-summary" id="filterSummary" style="display: none;">
+        <span class="filter-query-text" id="filterQueryText"></span>
+        <button type="button" class="reset-filter-btn" id="resetFilterBtn">
+          ✕ फ़िल्टर हटाएं (Reset)
+        </button>
+      </div>
+
+      <!-- Products Grid Container -->
+      <div class="products-grid" id="productsContainer">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Store Details & Contact Section (Bottom of site with Call & WhatsApp) -->
+  <footer class="store-details-section" id="storeDetailsSection">
+    <div class="store-details-container">
+
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Heritage -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">दयाल स्टोर (Dayal Store)</h3>
+          <p class="footer-col-text">
+            स्थापना 1952 • बाबागंज, प्रतापगढ़<br>
+            शुद्धता और ताज़गी की 70+ वर्षों की अटूट परंपरा।
+          </p>
+          <div class="footer-timing">
+            <span>⏰ समय: प्रातः 8:00 से रात्रि 9:30 (प्रतिदिन)</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Home Delivery Contacts -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">होम डिलीवरी (Home Delivery)</h3>
+          <p class="footer-col-text">
+            सामग्री घर मंगाने के लिए सीधे कॉल या व्हाट्सएप करें:
+          </p>
+          <div class="footer-phone-list">
+            <a href="tel:+917398283814" class="footer-phone-link">
+              <span>📞 +91 73982 83814</span>
+            </a>
+            <a href="tel:+916391488486" class="footer-phone-link">
+              <span>📞 +91 63914 88486</span>
+            </a>
+            <a href="https://wa.me/917398283814?text=नमस्ते%20दयाल%20स्टोर%2C%20मुझे%20सामान%20की%20होम%20डिलीवरी%20हेतु%20पूछताछ%20करनी%20है।" target="_blank" rel="noopener noreferrer" class="footer-wa-link">
+              <span>💬 व्हाट्सएप पर सूची भेजें</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 3: Location & Map -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">दुकान का पता (Location)</h3>
+          <p class="footer-col-text">
+            निकट तहसील सदर, बाबागंज,<br>
+            प्रतापगढ़ - 230001, उत्तर प्रदेश
+          </p>
+          <a href="https://maps.app.goo.gl/KrC8X8hDsoMfJ5YN8" target="_blank" rel="noopener noreferrer" class="footer-map-btn">
+            <span>📍 Google Maps पर देखें ➔</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Line -->
+      <div class="footer-bottom-line">
+        <span>© 1952 – 2026 Dayal Store, Pratapgarh. केवल उत्पाद कैटलॉग व उपलब्धता।</span>
+        <a href="https://maps.app.goo.gl/KrC8X8hDsoMfJ5YN8" target="_blank" rel="noopener noreferrer">
+          गूगल मैप लिंक
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Quick Actions at Bottom -->
+  <aside class="floating-action-container" aria-label="त्वरित संपर्क बटन">
+    <a href="https://wa.me/917398283814?text=नमस्ते%20दयाल%20स्टोर%2C%20मुझे%20सामान%20उपलब्धता%20हेतु%20पूछताछ%20करनी%20है।" target="_blank" rel="noopener noreferrer" class="fab-btn fab-whatsapp" id="fab-wa-btn" title="व्हाट्सएप">
+      <span>💬</span>
+    </a>
+    <a href="tel:+917398283814" class="fab-btn fab-call" id="fab-call-btn" title="कॉल करें">
+      <span>📞</span>
+    </a>
+    <button type="button" class="fab-btn fab-top" id="fabTop" title="ऊपर जाएं" aria-label="ऊपर जाएं">
+      <span>▲</span>
+    </button>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="js/catalog-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1221 @@
+/* ===================================================================
+   DAYAL STORE — HERITAGE PARCHMENT & VINTAGE BOTANICAL THEME
+   Established 1952, Baba Ganj, Pratapgarh, Uttar Pradesh
+   Design Direction: 1952 Authentic Indian Heritage Grocer
+   Theme: Aged Parchment Texture, Deep Forest Bottle Green & Antique Gold
+   =================================================================== */
+
+:root {
+  /* Authentic Aged Parchment & Paper Palette */
+  --parchment-base: #F4EAD6;
+  --parchment-deep: #E7D7B9;
+  --parchment-light: #FBF6EA;
+  --parchment-card: #FFFDF8;
+  --parchment-card-warm: #FAF4E5;
+  --parchment-card-hover: #FFFFFF;
+
+  /* Deep Heritage Forest Green (Letters & Linework from Logo) */
+  --green-deep: #1A3C20;
+  --green-primary: #214828;
+  --green-leaf: #2C5E35;
+  --green-hover: #143019;
+  --green-light: #EEF5EF;
+  --green-badge: #1C6B3A;
+
+  /* Antique Gold / Warm Ochre / Brass (Flourishes & Extrusion from Logo) */
+  --gold-accent: #C59A47;
+  --gold-dark: #9C7229;
+  --gold-light: #E5BE72;
+  --gold-soft: #F6EEDC;
+  --gold-border: rgba(197, 154, 71, 0.42);
+  --gold-glow: rgba(197, 154, 71, 0.28);
+
+  /* Borders & Dividers */
+  --border-vintage: #DFCBA4;
+  --border-vintage-subtle: rgba(197, 154, 71, 0.22);
+  --border-light: rgba(26, 60, 32, 0.12);
+
+  /* Typography Colors */
+  --text-primary: #1C2D20;
+  --text-secondary: #475549;
+  --text-muted: #7E8C80;
+  --text-gold: #986D24;
+
+  /* Radii & Shadows */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  --shadow-subtle: 0 3px 12px rgba(85, 60, 25, 0.06);
+  --shadow-vintage: 0 4px 18px rgba(70, 50, 25, 0.09);
+  --shadow-vintage-hover: 0 10px 28px rgba(60, 42, 18, 0.16);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Noto Serif Devanagari', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: var(--parchment-base);
+  background-image: 
+    radial-gradient(ellipse at 50% 12%, rgba(255, 252, 243, 0.55) 0%, rgba(225, 206, 172, 0.65) 100%),
+    url('../assets/images/parchment-tile.jpg');
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: var(--text-primary);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Vintage Vignette Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 65%, rgba(135, 98, 48, 0.12) 100%);
+  z-index: 998;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===================================================================
+   SITE NAVIGATION HEADER
+   =================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(246, 238, 222, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 2px solid var(--gold-accent);
+  box-shadow: 0 4px 18px rgba(70, 50, 25, 0.08);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition);
+}
+
+.brand-wrapper:hover {
+  transform: translateY(-1px);
+}
+
+.brand-seal-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-accent);
+  box-shadow: 0 2px 8px rgba(26, 60, 32, 0.18);
+  object-fit: cover;
+  background: #FFF;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: 'Cinzel', 'Marcellus', serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--green-deep);
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-gold);
+  letter-spacing: 0.03em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.minimal-nav-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--green-deep);
+  color: #FFFFFF;
+  border: 1.5px solid var(--gold-accent);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 3px 10px rgba(26, 60, 32, 0.2);
+  transition: var(--transition);
+}
+
+.minimal-nav-btn:hover {
+  background: var(--green-leaf);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(26, 60, 32, 0.28);
+}
+
+.minimal-nav-wa-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: #1B7A3E;
+  color: #FFFFFF;
+  border: 1.5px solid #58C57E;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 3px 10px rgba(27, 122, 62, 0.2);
+  transition: var(--transition);
+}
+
+.minimal-nav-wa-btn:hover {
+  background: #156633;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(27, 122, 62, 0.28);
+}
+
+/* ===================================================================
+   HERITAGE BRAND SHOWCASE HERO (Matching the Attached Logo & Photo)
+   =================================================================== */
+.heritage-hero-section {
+  padding: 44px 24px 34px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-vintage);
+  background: 
+    radial-gradient(circle at center, rgba(255, 253, 248, 0.5) 0%, rgba(240, 226, 198, 0.4) 100%);
+}
+
+.heritage-hero-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-seal-emblem-wrap {
+  margin-bottom: 18px;
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(245, 235, 215, 0.4) 100%);
+  box-shadow: 0 10px 32px rgba(80, 55, 25, 0.18);
+  border: 2px solid var(--gold-border);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-seal-emblem-wrap:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 40px rgba(80, 55, 25, 0.25);
+}
+
+.hero-seal-emblem {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.heritage-hero-text {
+  max-width: 680px;
+}
+
+.heritage-ornament-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 4px 16px;
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.ornament-glyph {
+  color: var(--gold-accent);
+  font-size: 1.1rem;
+}
+
+.heritage-motto {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  letter-spacing: 0.04em;
+}
+
+.heritage-title {
+  font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+  font-weight: 400;
+  color: var(--green-deep);
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    2px 2px 0 rgba(197, 154, 71, 0.35);
+}
+
+.heritage-ribbon-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--parchment-card);
+  border: 1.5px solid var(--gold-accent);
+  padding: 5px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 3px 10px rgba(80, 55, 25, 0.08);
+  margin-bottom: 10px;
+}
+
+.ribbon-decor {
+  color: var(--gold-dark);
+  font-size: 0.75rem;
+}
+
+.ribbon-text {
+  font-family: 'Cinzel', 'Noto Serif Devanagari', serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  letter-spacing: 0.08em;
+}
+
+.heritage-desc {
+  font-family: 'Noto Serif Devanagari', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ===================================================================
+   LIVE SEARCH BAR SECTION
+   =================================================================== */
+.search-section {
+  padding: 26px 24px;
+}
+
+.search-section-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.search-box-card {
+  background: var(--parchment-card);
+  border: 1.5px solid var(--gold-accent);
+  border-radius: var(--radius-pill);
+  padding: 6px 8px 6px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 18px rgba(90, 65, 30, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+}
+
+.search-box-card:focus-within {
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 3px rgba(197, 154, 71, 0.3), 0 8px 24px rgba(70, 50, 25, 0.16);
+}
+
+.search-icon-left {
+  font-size: 1.1rem;
+  color: var(--gold-dark);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.94rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+
+.search-clear-btn {
+  background: var(--parchment-card-warm);
+  color: var(--text-muted);
+  border: 1px solid var(--border-vintage);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  transition: var(--transition);
+}
+
+.search-clear-btn:hover {
+  color: var(--green-deep);
+  border-color: var(--gold-accent);
+}
+
+.search-action-btn {
+  background: var(--green-deep);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-accent);
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(26, 60, 32, 0.2);
+}
+
+.search-action-btn:hover {
+  background: var(--green-leaf);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ===================================================================
+   MAIN CATALOG SECTION
+   =================================================================== */
+.catalog-section {
+  padding: 20px 0 80px;
+}
+
+.catalog-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Category Filter Container */
+.category-filter-container {
+  margin-bottom: 32px;
+}
+
+.filter-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.filter-heading {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  letter-spacing: 0.03em;
+}
+
+.filter-counts {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-gold);
+}
+
+/* Category Pills (Vintage Indian Grocer styling) */
+.category-pills-scroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold-accent) transparent;
+}
+
+.category-pills-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-pills-scroll::-webkit-scrollbar-thumb {
+  background: var(--gold-accent);
+  border-radius: var(--radius-pill);
+}
+
+.category-pill {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--green-deep);
+  background: var(--parchment-card);
+  border: 1.5px solid var(--border-vintage);
+  box-shadow: 0 2px 6px rgba(90, 65, 30, 0.06);
+  transition: var(--transition);
+  font-family: 'Noto Serif Devanagari', sans-serif;
+}
+
+.category-pill:hover {
+  border-color: var(--gold-accent);
+  background: #FFFFFF;
+  color: var(--green-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(90, 65, 30, 0.12);
+}
+
+.category-pill.active {
+  background: var(--green-deep);
+  color: #FFFFFF;
+  border-color: var(--gold-accent);
+  box-shadow: 0 4px 16px rgba(26, 60, 32, 0.28);
+  font-weight: 600;
+}
+
+.pill-icon {
+  font-size: 0.92rem;
+}
+
+.pill-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--parchment-card-warm);
+  color: var(--green-deep);
+  border: 1px solid var(--border-vintage);
+}
+
+.category-pill.active .pill-count {
+  background: var(--gold-accent);
+  color: var(--green-deep);
+  border-color: var(--gold-light);
+}
+
+/* Subcategory Chips */
+.subcategory-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-top: 14px;
+  padding: 12px 4px;
+  border-top: 1.5px dashed var(--gold-border);
+}
+
+.subcat-chip {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  background: var(--parchment-card-warm);
+  border: 1px solid var(--border-vintage);
+  transition: var(--transition);
+  font-family: 'Noto Serif Devanagari', sans-serif;
+}
+
+.subcat-chip:hover {
+  color: var(--green-deep);
+  background: #FFFFFF;
+  border-color: var(--gold-accent);
+}
+
+.subcat-chip.active {
+  background: #FFFFFF;
+  color: var(--green-deep);
+  border: 1.5px solid var(--gold-accent);
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(197, 154, 71, 0.2);
+}
+
+/* Active Filter Summary */
+.active-filter-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 18px;
+  background: var(--parchment-card);
+  border: 1px solid var(--border-vintage);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--green-deep);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.reset-filter-btn {
+  font-size: 0.78rem;
+  color: var(--gold-dark);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.reset-filter-btn:hover {
+  color: var(--green-deep);
+  text-decoration: underline;
+}
+
+/* ===================================================================
+   CATEGORY SHOWCASE GRID (Images on Categories Only)
+   =================================================================== */
+.category-showcase-header {
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1.5px solid var(--gold-border);
+  padding-bottom: 8px;
+}
+
+.category-showcase-title {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  letter-spacing: 0.02em;
+}
+
+.category-showcase-sub {
+  font-family: 'Cinzel', 'Noto Serif Devanagari', serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-gold);
+}
+
+.category-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.category-card {
+  background: var(--parchment-card);
+  border: 1.5px solid var(--border-vintage);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(80, 55, 25, 0.08);
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px solid rgba(197, 154, 71, 0.18);
+  border-radius: calc(var(--radius-md) - 3px);
+  pointer-events: none;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-accent);
+  box-shadow: 0 10px 28px rgba(70, 45, 18, 0.16);
+}
+
+.category-card-img-wrap {
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  background: var(--parchment-card-warm);
+  position: relative;
+  border-bottom: 1px solid var(--border-vintage);
+}
+
+.category-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-card-img {
+  transform: scale(1.06);
+}
+
+.category-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.category-card-title {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  line-height: 1.35;
+}
+
+.category-card-count {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-border);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.category-card-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* ===================================================================
+   SELECTED CATEGORY BANNER
+   =================================================================== */
+.selected-category-banner {
+  background: var(--parchment-card);
+  border: 1.5px solid var(--gold-accent);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 22px rgba(80, 55, 25, 0.1);
+  position: relative;
+}
+
+.selected-cat-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.selected-cat-img {
+  width: 95px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--gold-border);
+  background: var(--parchment-card-warm);
+  flex-shrink: 0;
+}
+
+.selected-cat-info h2 {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.selected-cat-info .cat-en-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.cat-count-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-badge);
+  background: var(--green-light);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(28, 107, 58, 0.2);
+}
+
+.btn-back-categories {
+  font-family: 'Noto Serif Devanagari', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  background: var(--parchment-card-warm);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--gold-accent);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-back-categories:hover {
+  background: #FFFFFF;
+  transform: translateX(-3px);
+  box-shadow: 0 4px 12px rgba(90, 65, 30, 0.12);
+}
+
+/* ===================================================================
+   SUBCATEGORIES & PRODUCT LIST (NO IMAGES, Clean, Thin, Spacious)
+   =================================================================== */
+.subcategory-section-header {
+  margin: 32px 0 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--gold-border);
+}
+
+.subcat-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  letter-spacing: 0.08em;
+}
+
+.subcategory-title {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+.subcategory-title-en {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.catalog-list-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.catalog-item-card {
+  background: var(--parchment-card);
+  border: 1px solid var(--border-vintage);
+  border-left: 3.5px solid var(--gold-accent);
+  border-radius: var(--radius-sm);
+  padding: 15px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(80, 55, 25, 0.05);
+}
+
+.catalog-item-card:hover {
+  border-color: var(--gold-accent);
+  border-left-color: var(--green-deep);
+  background: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(70, 45, 18, 0.12);
+  transform: translateY(-2px);
+}
+
+.catalog-item-main {
+  flex: 1;
+}
+
+.catalog-item-name-hi {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+
+.catalog-item-name-en {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.catalog-pack-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-border);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.catalog-item-status {
+  flex-shrink: 0;
+}
+
+.stock-indicator {
+  font-family: 'Noto Serif Devanagari', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-badge);
+  background: var(--green-light);
+  border: 1px solid rgba(28, 107, 58, 0.2);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+/* No Results Card */
+.no-results-card {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--parchment-card);
+  border: 1.5px solid var(--gold-accent);
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px rgba(80, 55, 25, 0.08);
+}
+
+.no-results-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.no-results-title {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 6px;
+}
+
+.no-results-desc {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.no-results-call-box a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  border-bottom: 1px solid var(--gold-accent);
+  padding-bottom: 2px;
+}
+
+/* ===================================================================
+   STORE DETAILS & FOOTER (Heritage Deep Forest & Gold)
+   =================================================================== */
+.store-details-section {
+  background: linear-gradient(180deg, #18371E 0%, #0F2414 100%);
+  color: #F4EAD6;
+  border-top: 3px solid var(--gold-accent);
+  padding: 60px 0 32px;
+  position: relative;
+}
+
+.store-details-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 44px;
+}
+
+.footer-col-title {
+  font-family: 'Cinzel', 'Noto Serif Devanagari', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(229, 190, 114, 0.25);
+  padding-bottom: 8px;
+}
+
+.footer-col-text {
+  font-size: 0.86rem;
+  font-weight: 400;
+  color: rgba(244, 234, 214, 0.88);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.footer-timing {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--gold-light);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: var(--radius-xs);
+  border-left: 2px solid var(--gold-accent);
+}
+
+.footer-phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-phone-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-phone-link:hover {
+  color: var(--gold-light);
+  transform: translateX(4px);
+}
+
+.footer-wa-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #58C57E;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-wa-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.footer-map-btn {
+  display: inline-block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--green-deep);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--gold-light);
+  border: 1px solid var(--gold-accent);
+  transition: var(--transition);
+}
+
+.footer-map-btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom-line {
+  padding-top: 24px;
+  border-top: 1px solid rgba(229, 190, 114, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(244, 234, 214, 0.65);
+}
+
+.footer-bottom-line a {
+  color: var(--gold-light);
+}
+
+.footer-bottom-line a:hover {
+  text-decoration: underline;
+}
+
+/* ===================================================================
+   FLOATING ACTION BUTTONS
+   =================================================================== */
+.floating-action-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 99;
+}
+
+.fab-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: var(--transition);
+  border: 1.5px solid var(--gold-accent);
+}
+
+.fab-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+.fab-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  border-color: #58C57E;
+}
+
+.fab-call {
+  background: var(--green-deep);
+  color: #FFFFFF;
+  border-color: var(--gold-accent);
+}
+
+.fab-top {
+  background: var(--parchment-card);
+  color: var(--green-deep);
+  border-color: var(--gold-accent);
+  font-size: 0.85rem;
+  display: none;
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN
+   =================================================================== */
+@media (max-width: 900px) {
+  .category-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .catalog-list-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+
+  .header-inner {
+    padding: 10px 16px;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-seal-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .minimal-nav-btn {
+    padding: 6px 12px;
+    font-size: 0.76rem;
+  }
+
+  .minimal-nav-btn .nav-btn-text {
+    display: none;
+  }
+
+  .minimal-nav-btn::after {
+    content: 'कॉल';
+  }
+
+  .minimal-nav-wa-btn {
+    padding: 6px 12px;
+    font-size: 0.76rem;
+  }
+
+  .heritage-hero-section {
+    padding: 30px 16px 24px;
+  }
+
+  .hero-seal-emblem {
+    width: 130px;
+    height: 130px;
+  }
+
+  .heritage-title {
+    font-size: 2.2rem;
+  }
+
+  .category-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .selected-category-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
